@@ -8,7 +8,7 @@ namespace Sprint_0_Warm_Up
     {
         public Airplane()
         {
-
+            MaxAltitude = 41000;
         }
     }
 }
