@@ -6,7 +6,7 @@ namespace Sprint_0_Warm_Up
     public abstract class AerialVehicle
     {
         public int CurrentAltitude { get; set; }
-        Engine Engine { get; set; }
+        public Engine Engine { get; set; }
         public bool IsFlying { get; set; }
         public int MaxAltitude { get; set; }
 
