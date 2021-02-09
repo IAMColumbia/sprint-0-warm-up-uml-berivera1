@@ -8,7 +8,8 @@ namespace Sprint_0_Warm_Up
     {
         public Airplane()
         {
-
+            // Airplanes have a maximum altitude of 41000 ft. We set this up in its constructor.
+            MaxAltitude = 41000;
         }
     }
 }

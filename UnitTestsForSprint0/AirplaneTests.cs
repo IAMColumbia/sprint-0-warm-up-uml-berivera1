@@ -1,10 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sprint_0_Warm_Up;
 
+// Note: Test code modified from test files within the provided UnitTestProjectAV folder.
+
 namespace UnitTestsForSprint0 {
     [TestClass]
-    public class AirplaneTests
-    {
+    public class AirplaneTests {
         private Airplane airplane;
 
         /// <summary>
@@ -24,11 +25,11 @@ namespace UnitTestsForSprint0 {
             //Act
             // Nothing to act on here.
             //Assert
-            Assert.AreEqual(ap.About(), $"This {ap.ToString()} has a max altitude of 41000 ft. \nIt's current altitude is 0 ft. \n{ap.Engine.ToString()} is not started.");
+            Assert.AreEqual(ap.About(), $"This {ap.ToString()} has a max altitude of 41000 ft.\nIts current altitude is 0 ft.\n{ap.Engine.ToString()} is not started.");
         }
 
         [TestMethod]
-        public void AirplaneEngineTests() {
+        public void AirplaneEngine() {
             //Arrange
             Airplane ap = this.Airplane;
             //Act 
@@ -44,7 +45,7 @@ namespace UnitTestsForSprint0 {
         }
 
         [TestMethod]
-        public void AireplaneTakeOff() {
+        public void AirplaneTakeOff() {
             //Arrange 
             Airplane ap = this.Airplane;
             //act
@@ -53,14 +54,14 @@ namespace UnitTestsForSprint0 {
             ap.StartEngine();
             string secondTakeOff = ap.TakeOff();
             //Assert
-            Assert.AreEqual(firstTakeoff, ap.ToString() + " can't fly it's engine is not started.");
-            Assert.AreEqual(secondTakeOff, ap.ToString() + " is flying");
+            Assert.AreEqual(firstTakeoff, ap.ToString() + " can't fly, its engine is not started.");
+            Assert.AreEqual(secondTakeOff, ap.ToString() + " is flying.");
             Assert.AreEqual(engineBeforeStart, false);
             Assert.AreEqual(ap.Engine.IsStarted, true);
         }
 
         [TestMethod]
-        public void AirpnAireplaneFlyUp() {
+        public void AirplaneFlyUp() {
             //Arrange 
             Airplane ap = this.Airplane;
             //act
@@ -71,15 +72,18 @@ namespace UnitTestsForSprint0 {
             int firstAlt = ap.CurrentAltitude;
             ap.FlyUp(40000);
             int secondAlt = ap.CurrentAltitude;
+            ap.FlyUp(1); // This should fail and return the same value as the previous.
+            int thirdAlt = ap.CurrentAltitude;
             //Assert
             Assert.AreEqual(defaultHeight, 0);
             Assert.AreEqual(firstAlt, 1000);
             Assert.AreEqual(secondAlt, 41000);
+            Assert.AreEqual(thirdAlt, secondAlt);
 
         }
 
         [TestMethod]
-        public void AireplaneFlyDown() {
+        public void AirplaneFlyDown() {
             //Arrange 
             Airplane ap = this.Airplane;
             //act
@@ -100,10 +104,8 @@ namespace UnitTestsForSprint0 {
             //Assert
             Assert.AreEqual(defaultHeight, 0);
             Assert.AreEqual(FlyDown, 0);
-            //Assert.AreEqual(FlyDownOneAlreadyZero, 0);
+            Assert.AreEqual(FlyDownOneAlreadyZero, 0);
             Assert.AreEqual(FlyDownOneAtTwo, 1);
-
-
         }
     }
 }
