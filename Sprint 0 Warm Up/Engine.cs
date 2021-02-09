@@ -11,6 +11,8 @@
 
         public string About()
         {
+            // NOTE TO SELF: What does the Engine's About() method return?
+            // Maybe this could return the status string, but would that make AerialVehicle's GetEngineStartedString() method obsolete?
             return "TO DO";
         }
 
