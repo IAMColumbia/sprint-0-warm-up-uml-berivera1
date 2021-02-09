@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Sprint_0_Warm_Up {
-    class Airport {
+    public class Airport {
         // The amount of vehicles that are allowed in the Airport. Default to 1, but can be defined with the second constructor (line 14).
         private int MaxVehicles = 1;
         private List<AerialVehicle> Vehicles = new List<AerialVehicle>();

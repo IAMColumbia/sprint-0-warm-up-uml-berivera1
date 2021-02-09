@@ -5,7 +5,7 @@ using System.Text;
 namespace Sprint_0_Warm_Up
 {
     // Toy Plane is a child of the Airplane class.
-    class ToyPlane : Airplane
+    public class ToyPlane : Airplane
     {
         public bool IsWoundUp { get; set; }
 
@@ -18,7 +18,7 @@ namespace Sprint_0_Warm_Up
             // Toy Plane's About method also prints out the status of whether the vehicle's wound up, so it overrides the base About() method.
             string returnString = $"This {this.GetType()} has a max altitude of {MaxAltitude} ft.\n";
             returnString += $"Its current altitude is {CurrentAltitude} ft.\n";
-            returnString += GetWindUpString();
+            returnString += GetWindUpString() + "\n";
             returnString += GetEngineStartedString();
             return returnString;
         }
@@ -39,11 +39,11 @@ namespace Sprint_0_Warm_Up
         }
 
         public void UnWind() {
-            // NOTE TO SELF: As-is, the Toy Plane can be wound infinitely. Is there such a thing as winding it too much? Should we program that scenario, or stop the user from winding it up too much?
             IsWoundUp = false;
         }
 
         public void WindUp() {
+            // NOTE TO SELF: As-is, the Toy Plane can be wound infinitely. Is there such a thing as winding it too much? Should we program that scenario, or stop the user from winding it up too much?
             IsWoundUp = true;
         }
     }
